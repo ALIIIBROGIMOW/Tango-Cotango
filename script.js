@@ -58,7 +58,7 @@ document.addEventListener('touchend', function(event) {
         const nav = document.querySelector('nav ul');
         const toggle = document.querySelector('.menu-toggle');
 
-        if (diffX > 0) {
+        if (diffX < 0) {
             if (!nav.classList.contains('nav-active')) {
                 toggleMenu();
             }
