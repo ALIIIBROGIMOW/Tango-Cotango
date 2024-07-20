@@ -270,6 +270,10 @@ textarea::placeholder {
         color: white; 
         font-size: 20px;
     }
+    #social img{
+        width: 25px;
+        height: 25px;
+    }
 
     .toggle-active {
         right: 170px;  
