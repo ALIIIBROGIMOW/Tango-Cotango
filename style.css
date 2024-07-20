@@ -22,6 +22,21 @@ header{
     justify-content: space-between;
     align-items: center;
 }
+#unsmartmen{
+    display: flex;
+    justify-content: center;
+}
+.not_carousel_item{
+    display: flex;
+    background-color: gray;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.slider img{
+    width: 300px;
+    height: 300px;
+}
 #hdlg1{    
     display: flex;
     justify-content: space-between;
