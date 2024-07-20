@@ -1,5 +1,5 @@
 function handle() {
-    let inputs = document.querySelectorAll("input, textarea"); // Добавляем textarea в выборку
+    let inputs = document.querySelectorAll("input, textarea"); 
     let input_values = [];
     inputs.forEach(element => {
         input_values.push(element.value);
@@ -72,6 +72,49 @@ document.addEventListener('touchend', function(event) {
     touchStartX = null;
     touchStartY = null;
 }, false);
+
+
+$(document).ready(function(){
+    function initializeSlider() {
+    }
+    
+    function adjustSliderForScreenWidth() {
+        var screenWidth = $(window).width();        
+        if (screenWidth <= 767) { 
+            $('.slider').bxSlider({
+                auto: true,
+                mode: 'horizontal',
+                minSlides: 3,
+                maxSlides: 3,
+                moveSlides: 1,
+                slideMargin: 10,
+                infiniteLoop: true,
+                captions: true,
+                slideWidth: 250
+            });
+        } else {
+            $('.slider').bxSlider({
+                auto: true,
+                mode: 'horizontal',
+                minSlides: 5,
+                maxSlides: 5,
+                moveSlides: 1,
+                slideMargin: 10,
+                infiniteLoop: true,
+                captions: true,
+                slideWidth: 250
+            });
+        }
+    }
+
+    // Инициализация слайдера при загрузке страницы
+    adjustSliderForScreenWidth();
+    
+    // Перенастроить слайдер при изменении размера окна
+    $(window).resize(function(){
+        adjustSliderForScreenWidth();
+    });
+});
 
 
 
