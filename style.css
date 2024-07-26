@@ -25,12 +25,21 @@ header{
 #unsmartmen{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .not_carousel_item{
     display: flex;
     background-color: gray;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+
+}
+.not_carousel_item img{
+    width: 600px;
+    height: 600px;
 
 }
 .slider img{
@@ -257,6 +266,11 @@ textarea::placeholder {
     }
     p {
         font-size: 20px;
+    }
+    .not_carousel_item img{
+        width: 300px;
+        height: 300px;
+    
     }
     #Galery img{
         height: 150px;
