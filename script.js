@@ -90,27 +90,25 @@ $(document).ready(function(){
                 slideMargin: 10,
                 infiniteLoop: true,
                 captions: true,
-                slideWidth: 250
+                slideWidth: 300
             });
         } else {
             $('.slider').bxSlider({
                 auto: true,
                 mode: 'horizontal',
-                minSlides: 5,
-                maxSlides: 5,
+                minSlides: 4,
+                maxSlides: 4,
                 moveSlides: 1,
                 slideMargin: 10,
                 infiniteLoop: true,
                 captions: true,
-                slideWidth: 250
+                slideWidth: 600
             });
         }
     }
 
-    // Инициализация слайдера при загрузке страницы
     adjustSliderForScreenWidth();
     
-    // Перенастроить слайдер при изменении размера окна
     $(window).resize(function(){
         adjustSliderForScreenWidth();
     });
