@@ -4,22 +4,24 @@
     --color-textetcv2: lightgray;
     --color-contr: black;
     --color-countr2: darkgray;
+    --color-headerfooter:lightgray ;
 }
-
 [data-theme="dark"] {
     --color-main: gray;
     --color-textetc: white;
     --color-textetcv2: lightgray;
     --color-contr: black;
     --color-countr2: darkgray;
+    --color-headerfooter:lightgray ;
 }
 
 [data-theme="light"] {
     --color-main: white;
     --color-textetc: black;
-    --color-textetcv2: darkgray;
+    --color-textetcv2: black;
     --color-contr: gray;
     --color-countr2: lightgray;
+    --color-headerfooter:darkgray ;
 }
 
 html, body {
@@ -46,14 +48,14 @@ p {
 }
 
 header {
-    background-color:  var(--color-textetcv2);
+    background-color:  var(--color-headerfooter);
     margin: 0;
     padding: 0;
 }
 
 #scrollButton {
     position: fixed;
-    bottom: 20px;
+    bottom: 100px;
     left: 20px;
     width: 50px;
     height: 50px;
@@ -242,8 +244,10 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     
+    
 }
-
+.realbanner p {        
+    font-size: 25px;}
 #Galery img {
     height: 300px;
     width: 350px;
@@ -309,7 +313,7 @@ img {
 }
 
 footer {
-    background-color:  var(--color-textetcv2);
+    background-color:  var(--color-headerfooter);
     margin: 0;
     padding-left: 20px;    
     padding-right: 20px;
