@@ -1,13 +1,37 @@
+:root {
+    --color-main: gray;
+    --color-textetc: white;
+    --color-textetcv2: lightgray;
+    --color-contr: black;
+    --color-countr2: darkgray;
+}
+
+[data-theme="dark"] {
+    --color-main: gray;
+    --color-textetc: white;
+    --color-textetcv2: lightgray;
+    --color-contr: black;
+    --color-countr2: darkgray;
+}
+
+[data-theme="light"] {
+    --color-main: white;
+    --color-textetc: black;
+    --color-textetcv2: darkgray;
+    --color-contr: gray;
+    --color-countr2: lightgray;
+}
+
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: gray;    
+    background-color: var(--color-main);    
     font-size: 20px;
 }
   
 h1 {
-    color: white;    
+    color:  var(--color-textetc);    
     font-size: 35px;    
     font-family: "Lobster", sans-serif;
     font-weight: 400;
@@ -18,17 +42,43 @@ p {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
     font-style: normal;
-    color: lightgray;
+    color:  var(--color-textetcv2);
 }
 
 header {
-    background-color: lightgray;
+    background-color:  var(--color-textetcv2);
     margin: 0;
     padding: 0;
 }
 
+#scrollButton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.3s;
+}
+#scrollButton img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+}
+#scrollButton.flip img {
+    transform: rotate(180deg);  
+}
+#scrollButton:hover {
+    transform: scale(1.1);
+}
+
+
 li p {
-    color: black;
+    color:   var(--color-contr);
     display: none;
 }
 
@@ -47,7 +97,7 @@ li p {
 
 .not_carousel_item {
     display: flex;
-    background-color: gray;
+    background-color:  var(--color-main);
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
@@ -71,7 +121,16 @@ li p {
     justify-content: space-between;
     align-items: center;
 }
+#themico {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+}
 
+#themico:hover {
+    transform: scale(1.1);
+}
 #logolink {
     margin: 10px;
     font-family: "Rubik Pixels", system-ui;
@@ -97,7 +156,7 @@ li p {
 }
 
 header  a {
-    color: grey; 
+    color:  var(--color-main); 
     font-size: 20px;       
     font-family: "Lobster", sans-serif;
     font-weight: 400;
@@ -107,7 +166,7 @@ header  a {
 
 header a:hover {
     font-size: 24px;  
-    color: black;  
+    color:   var(--color-contr);  
 }
 
 a {
@@ -148,14 +207,14 @@ img {
     justify-content: space-around;
     align-items: center;
     width: 200px;
-    background-color: gray;
-    border-color: black;
+    background-color:  var(--color-main);
+    border-color:   var(--color-contr);
     border-style: solid; 
     border-radius: 15px;    
-    border-top: 5px solid black;
-    border-left: 5px solid black;
-    border-bottom: 5px solid white;
-    border-right: 5px solid white;
+    border-top: 5px solid   var(--color-contr);
+    border-left: 5px solid   var(--color-contr);
+    border-bottom: 5px solid  var(--color-textetc);
+    border-right: 5px solid  var(--color-textetc);
     transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -164,17 +223,17 @@ img {
 }
 
 .Subscribe_Button:hover {
-    background-color: darkgray;
+    background-color:  var(--color-countr2);
     transform: scale(1.05); 
 }
 
 .Subscribe_Button:active {
-    background-color: lightgray;
+    background-color:  var(--color-textetcv2);
     transform: scale(0.95);  
 }
 
 .realbanner {
-    background-color: gray;
+    background-color:  var(--color-main);
     margin: 20px;
 }
 
@@ -188,10 +247,10 @@ img {
 #Galery img {
     height: 300px;
     width: 350px;
-    border-top: 5px solid black;
-    border-left: 5px solid black;
-    border-bottom: 5px solid white;
-    border-right: 5px solid white;
+    border-top: 5px solid   var(--color-contr);
+    border-left: 5px solid   var(--color-contr);
+    border-bottom: 5px solid  var(--color-textetc);
+    border-right: 5px solid  var(--color-textetc);
     transition: transform 0.3s, box-shadow 0.3s; 
 }
 
@@ -217,11 +276,11 @@ img {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    background-color: white;
-    border-right: 5px solid white;
-    border-left: 5px solid white;
-    border-bottom: 5px solid black;
-    border-top: 5px solid black;
+    background-color:  var(--color-textetc);
+    border-right: 5px solid  var(--color-textetc);
+    border-left: 5px solid  var(--color-textetc);
+    border-bottom: 5px solid   var(--color-contr);
+    border-top: 5px solid   var(--color-contr);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -233,12 +292,12 @@ img {
 #licenseDIV p {
     font-size: 16px;
     line-height: 1.6;
-    color: #333;
+    color:  var(--color-countr2);
     transition: color 0.3s;  
 }
 
 #licenseDIV p:hover {
-    color: #555;  
+    color:   var(--color-contr);  
 }
 
 #ender {
@@ -250,7 +309,7 @@ img {
 }
 
 footer {
-    background-color: lightgray;
+    background-color:  var(--color-textetcv2);
     margin: 0;
     padding-left: 20px;    
     padding-right: 20px;
@@ -260,7 +319,7 @@ footer {
 }
 
 footer p {
-    color: gray;    
+    color:  var(--color-main);    
     font-family: "Lobster", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -284,7 +343,7 @@ input {
 }
 
 input::placeholder {
-    color: white; 
+    color:  var(--color-textetc); 
     font-size: 20px;
 }
 
@@ -292,32 +351,32 @@ input::placeholder {
     width: 41%;
     margin-top: 7px;    
     margin-bottom: 7px;
-    background-color: gray;
-    color: white;
-    border-top: 5px solid black;
-    border-left: 5px solid black;
-    border-bottom: 5px solid white;
-    border-right: 5px solid white;
+    background-color:  var(--color-main);
+    color:  var(--color-textetc);
+    border-top: 5px solid   var(--color-contr);
+    border-left: 5px solid   var(--color-contr);
+    border-bottom: 5px solid  var(--color-textetc);
+    border-right: 5px solid  var(--color-textetc);
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .logment:hover {
-    background-color: darkgray;
+    background-color:  var(--color-countr2);
     transform: scale(1.05);
 }
 
 .logment:focus {
-    background-color: lightgray; 
+    background-color:  var(--color-textetcv2); 
     transform: scale(1.05);
 }
 
 .btn:hover {
-    background-color: darkgray;
+    background-color:  var(--color-countr2);
     transform: scale(1.05);
 }
 
 .btn:active {
-    background-color: lightgray;
+    background-color:  var(--color-textetcv2);
     transform: scale(0.95); 
 }
 
@@ -330,28 +389,28 @@ input::placeholder {
 textarea {
     font-size: 25px;
     height: 120px;
-    background-color: gray;
-    color: white;
-    border-top: 5px solid black;
-    border-left: 5px solid black;
-    border-bottom: 5px solid white;
-    border-right: 5px solid white;
+    background-color:  var(--color-main);
+    color:  var(--color-textetc);
+    border-top: 5px solid   var(--color-contr);
+    border-left: 5px solid   var(--color-contr);
+    border-bottom: 5px solid  var(--color-textetc);
+    border-right: 5px solid  var(--color-textetc);
     padding: 10px; 
     transition: background-color 0.3s, transform 0.3s; 
 }
 
 textarea::placeholder {
-    color: white; 
+    color:  var(--color-textetc); 
     
 }
 
 textarea:hover {
-    background-color: darkgray;
+    background-color:  var(--color-countr2);
     transform: scale(1.05);
 }
 
 textarea:focus  {
-    background-color: lightgray;
+    background-color:  var(--color-textetcv2);
     transform: scale(1.05);
 }
 
@@ -369,7 +428,7 @@ textarea:focus  {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: black;
+    background-color:   var(--color-contr);
     margin: 4px auto;
     transition: all 0.3s;
 }
@@ -408,12 +467,12 @@ textarea:focus  {
         width: 50%;
         min-width: 230px;
         height: 1200vh;
-        background-color: lightgray;
+        background-color:  var(--color-textetcv2);
         flex-direction: column;
         justify-content: start;
         align-items: start;
         padding-top: 10px;
-        border-color: black;
+        border-color:   var(--color-contr);
         border-style: solid;   
         border-width: 5px; 
         transition: right 0.3s ease-in-out; 
@@ -429,11 +488,11 @@ textarea:focus  {
 
     header a:hover {
         font-size: 34px;  
-        color: black;  
+        color:   var(--color-contr);  
     } 
 
     li p {
-        color: black;
+        color:   var(--color-contr);
         display: block;
     }
 
@@ -488,7 +547,7 @@ textarea:focus  {
     }
 
     input::placeholder {
-        color: white; 
+        color:  var(--color-textetc); 
         font-size: 20px;
     }
 
@@ -506,7 +565,7 @@ textarea:focus  {
     }
 
     input::placeholder {
-        color: white; 
+        color:  var(--color-textetc); 
         font-size: 15px;
     }
     
