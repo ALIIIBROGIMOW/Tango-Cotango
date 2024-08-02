@@ -1,3 +1,56 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var theme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    updateThemeIcon(theme);
+});
+
+document.getElementById('themico').addEventListener('click', function() {
+    var currentTheme = document.documentElement.getAttribute('data-theme');
+    var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+});
+
+function updateThemeIcon(theme) {
+    var themeIcon = document.getElementById('themico');
+    if (theme === 'dark') {
+        themeIcon.src = 'images/Sun.png';
+        themeIcon.alt = 'Switch to light theme';
+    } else {
+        themeIcon.src = 'images/Moon.png';
+        themeIcon.alt = 'Switch to dark theme';
+    }
+}
+
+let lastScrollTop = 0;
+let lastScrollTopForReset = 0;
+let scrollToTop = true;
+
+window.addEventListener('scroll', () => {
+    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (!scrollToTop && currentScrollTop > lastScrollTopForReset) {
+            const scrollButton = document.getElementById('scrollButton');
+            scrollButton.classList.remove('flip');
+            scrollToTop = true;
+        }
+    lastScrollTopForReset = currentScrollTop;
+});
+
+function scrollToTopOrLast() {
+    const scrollButton = document.getElementById('scrollButton');
+    if (scrollToTop) {
+        lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollToTop = false;
+        scrollButton.classList.add('flip');
+    } else {
+        window.scrollTo({ top: lastScrollTop, behavior: 'smooth' });
+        scrollToTop = true;
+        scrollButton.classList.remove('flip');
+    }
+}
+
 function handle() {
     let inputs = document.querySelectorAll("input, textarea"); 
     let input_values = [];
